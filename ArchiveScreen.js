@@ -10,4 +10,4 @@ const ArchiveScreen = () => {
     );
 }
 
-export default Home;
+export default ArchiveScreen;

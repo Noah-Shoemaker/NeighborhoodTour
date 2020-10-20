@@ -7,4 +7,4 @@ const MapScreen = () => (
     </View>
 )
 
-export default Home;
+export default MapScreen;

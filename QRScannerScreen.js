@@ -10,4 +10,4 @@ const QRScannerScreen = () => {
     );
 }
 
-export default Home;
+export default QRScannerScreen;
