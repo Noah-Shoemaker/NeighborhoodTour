@@ -1,11 +1,11 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-const Home = () => {
+const ArchiveScreen = () => {
     
     return(
         <View>
-            <Text>Welcome to the QR Scanner!</Text>
+            <Text>Welcome to the Archive!</Text>
         </View>
     );
 }

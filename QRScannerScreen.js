@@ -1,11 +1,11 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-const Home = () => {
+const QRScannerScreen = () => {
     
     return(
         <View>
-            <Text>Welcome to the Map!</Text>
+            <Text>Welcome to the QR Scanner!</Text>
         </View>
     );
 }
