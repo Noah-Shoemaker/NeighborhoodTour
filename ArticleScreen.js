@@ -1,11 +1,11 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-const ArticleScreen = () => {
+const ArticleScreen = ({navigation}) => {
     
     return(
         <View>
-            <Text>Welcome to the ArticleScreens!</Text>
+            <Text>Welcome to the ArticleScrees!</Text>
         </View>
     );
 }
