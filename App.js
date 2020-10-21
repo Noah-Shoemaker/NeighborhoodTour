@@ -1,7 +1,9 @@
 import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import ArticleScreen from './ArticleScreen';
+import MainStackScreen from './MainStackScreen';
 
 const RootStack = createStackNavigator();
 
