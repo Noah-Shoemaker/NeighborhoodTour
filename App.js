@@ -1,26 +1,22 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import HomeScreen from './HomeScreen';
-import ArchiveScreen from './ArchiveScreen'
-import MapScreen from './MapScreen'
-import QRScannerScreen from './QRScannerScreen'
+import ArticleScreen from './ArticleScreen';
 
-const Tab = createBottomTabNavigator();
+const RootStack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Archive" component={ArchiveScreen}/>
-        <Tab.Screen name="QRScanner" component={QRScannerScreen} />
-        <Tab.Screen name="Map" component={MapScreen} />
-      </Tab.Navigator>
+      <RootStack.Navigator mode="modal">
+        <RootStack.Screen
+          name="Main"
+          component={MainStackScreen}
+          options={{ headerShown: false }}
+        />
+        <RootStack.Screen name="Article" component={ArticleScreen} />
+      </RootStack.Navigator>
     </NavigationContainer>
-    
   );
 }
 
