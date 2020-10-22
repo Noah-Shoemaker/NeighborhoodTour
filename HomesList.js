@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, Button, FlatList } from 'react-native';
 
-const ArchiveList = ({navigation}) => {
+const HomesList = ({navigation}) => {
     
     return(
         <View>
@@ -17,4 +17,4 @@ const ArchiveList = ({navigation}) => {
     );
 }
 
-export default ArchiveList;
+export default HomesList;
