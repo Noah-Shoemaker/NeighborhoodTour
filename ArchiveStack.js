@@ -6,7 +6,7 @@ import FeatureList from './FeatureList';
 
 const ArchStack = createStackNavigator();
 
-const ArchiveStack = () => {
+const ArchiveStack = ({navigation}) => {
 
     return(
 
@@ -15,7 +15,7 @@ const ArchiveStack = () => {
             <ArchStack.Screen name='Homes List' component={HomesList}/>
             <ArchStack.Screen name='Feature List' component={FeatureList}/>
         </ArchStack.Navigator>
-        
+
     );
 }
 
