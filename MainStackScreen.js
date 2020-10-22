@@ -4,6 +4,7 @@ import HomeScreen from './HomeScreen';
 import ArchiveScreen from './ArchiveScreen';
 import QRScannerScreen from './QRScannerScreen';
 import MapScreen from './MapScreen';
+import ArchiveStack from './ArchiveStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -12,7 +13,7 @@ function MainStackScreen() {
     return (
         <Tab.Navigator>
             <Tab.Screen name="Home" component={HomeScreen} />
-            <Tab.Screen name="Archive" component={ArchiveScreen}/>
+            <Tab.Screen name="Archive" component={ArchiveStack}/>
             <Tab.Screen name="QRScanner" component={QRScannerScreen} />
             <Tab.Screen name="Map" component={MapScreen} />
         </Tab.Navigator>
