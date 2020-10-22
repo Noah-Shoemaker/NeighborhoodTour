@@ -9,9 +9,9 @@ const ArchiveScreen = ({navigation}) => {
 
             <Text>Welcome to the Archive!</Text>
 
-            <Button onPress={() => navigation.navigate('Article')} title="Article" />
+            <Button onPress={() => navigation.navigate('Homes List')} title="Homes List" />
 
-            <Button onPress={() => navigation.navigate('HomesList')} title="Homes List" />
+            <Button onPress={() => navigation.navigate('Feature List')} title="Feature List" />
 
         </View>
     );
