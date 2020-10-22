@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, Button } from 'react-native';
+import ArchiveList from './ArchiveList';
 
 const ArchiveScreen = ({navigation}) => {
     
@@ -10,6 +11,7 @@ const ArchiveScreen = ({navigation}) => {
             onPress={() => navigation.navigate('Article')}
             title="Article"
             />
+            <ArchiveList></ArchiveList>
         </View>
     );
 }
