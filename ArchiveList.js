@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Button } from 'react-native';
+import { Text, View, Button, FlatList } from 'react-native';
 
 const ArchiveList = ({navigation}) => {
     
