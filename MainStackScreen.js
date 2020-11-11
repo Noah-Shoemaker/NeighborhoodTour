@@ -1,7 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './HomeScreen';
-import ArchiveScreen from './ArchiveScreen';
 import QRScannerScreen from './QRScannerScreen';
 import MapScreen from './MapScreen';
 import ArchiveStack from './ArchiveStack';
