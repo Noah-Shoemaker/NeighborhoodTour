@@ -5,7 +5,6 @@ import MapView from "react-native-maps";
 const MapScreen = () => {
 
     return(
-        <View>
 
             <MapView
                 style={{ flex: 1 }}
@@ -17,7 +16,6 @@ const MapScreen = () => {
                 }}
             />
 
-        </View>
     );
 };
 
