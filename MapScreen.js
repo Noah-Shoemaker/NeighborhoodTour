@@ -6,7 +6,6 @@ const MapScreen = () => (
     <View>
 
         <MapView
-            style={{ flex: 1 }}
             initialRegion={{
                 latitude: 40.805890,
                 longitude: -96.702722,
