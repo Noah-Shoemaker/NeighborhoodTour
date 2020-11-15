@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text, View, Button, FlatList } from 'react-native';
-import ArticleScreen from './ArticleScreen';
 
 const HomesList = ({navigation}) => {
     
@@ -12,7 +11,7 @@ const HomesList = ({navigation}) => {
                 {key: 'Home2'},
                 {key: 'Home3'},
                 ]}
-                renderItem={({item}) => <ArticleScreen>{item.key}</ArticleScreen>}
+                renderItem={({item}) => <Text onPress={() => navigation.navigate("Article")}>{item.key}</Text>}
             />
         </View>
     );
