@@ -1,12 +1,12 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import QRCodeScanner from 'react-native-qrcode-scanner';
+import { RNCamera } from 'react-native-camera';
 
 const QRScannerScreen = () => {
     
     return(
-        <View>
-            <Text>Welcome to the QR Scanner!</Text>
-        </View>
+        <QRCodeScanner />
     );
 }
 
