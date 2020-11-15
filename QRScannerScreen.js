@@ -1,12 +1,11 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import QRCodeScanner from 'react-native-qrcode-scanner';
-import { RNCamera } from 'react-native-camera';
+import { BarCodeScanner } from 'expo-barcode-scanner';
 
 const QRScannerScreen = () => {
     
     return(
-        <QRCodeScanner />
+        <BarCodeScanner />
     );
 }
 
