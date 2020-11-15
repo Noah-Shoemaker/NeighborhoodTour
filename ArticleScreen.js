@@ -5,7 +5,7 @@ const ArticleScreen = ({navigation}) => {
     
     return(
         <View>
-            <Text>Welcome to the ArticleScrees!</Text>
+            <Text>Welcome to the ArticleScreen!</Text>
         </View>
     );
 }

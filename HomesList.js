@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, Button, FlatList } from 'react-native';
+import ArticleScreen from './ArticleScreen';
 
 const HomesList = ({navigation}) => {
     
@@ -11,7 +12,7 @@ const HomesList = ({navigation}) => {
                 {key: 'Home2'},
                 {key: 'Home3'},
                 ]}
-                renderItem={({item}) => <Text>{item.key}</Text>}
+                renderItem={({item}) => <ArticleScreen>{item.key}</ArticleScreen>}
             />
         </View>
     );
