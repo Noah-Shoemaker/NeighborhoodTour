@@ -1,17 +1,14 @@
 import React from 'react';
 import { Text, View, Button, FlatList } from 'react-native';
+import dataBase from "/DataBase.json";
 
 const HomesList = ({navigation}) => {
     
     return(
         <View>
             <FlatList
-                data={[
-                {key: 'Home1'},
-                {key: 'Home2'},
-                {key: 'Home3'},
-                ]}
-                renderItem={({item}) => <Text onPress={() => navigation.navigate("Article")}>{item.key}</Text>}
+                data = {dataBase.homes}
+                renderItem={({item}) => <Text onPress={() => navigation.navigate("Article")}>{item.name}</Text>}
             />
         </View>
     );

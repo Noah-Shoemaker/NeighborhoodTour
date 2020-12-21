@@ -36,6 +36,7 @@ const QRScannerScreen = () => {
       <BarCodeScanner
         onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
         style={StyleSheet.absoluteFillObject}
+        barCodeTypes={[BarCodeScanner.Constants.BarCodeType.qr]}
       />
 
       {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />}
