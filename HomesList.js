@@ -10,7 +10,7 @@ const HomesList = ({navigation}) => {
         <View>
             <FlatList
                 data = {DATA}
-                renderItem={({item}) => <Text onPress={() => navigation.navigate("Article")}>{item.name}</Text>}
+                renderItem={({item}) => <Text onPress={() => navigation.navigate("Article",item)}>{item.name}</Text>}
             />
         </View>
     );
