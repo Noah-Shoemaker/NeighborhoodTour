@@ -3,7 +3,7 @@ import { Text, View, StyleSheet, Button } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import dataBase from "./DateBase.json";
 
-const QRScannerScreen = () => {
+const QRScannerScreen = ({navigation}) => {
     
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
@@ -20,7 +20,7 @@ const QRScannerScreen = () => {
     var url = data.split("/");
     var homeKey = url[4];
     var result = dataBase.homes.filter(home => {return home.key === homeKey});
-    navigation.navigate("Article", result);
+    navigation.navigate("Article", result[0]);
   };
 
   if (hasPermission === null) {
