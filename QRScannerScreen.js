@@ -1,6 +1,7 @@
-import React from 'react';
-import { Text, View, StyleSheet, useState, useEffect, Button } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Text, View, StyleSheet, Button } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
+import dataBase from "./DateBase.json";
 
 const QRScannerScreen = () => {
     
@@ -16,7 +17,10 @@ const QRScannerScreen = () => {
 
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
-    alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+    var url = data.split("/");
+    var homeKey = url[4];
+    var result = dataBase.homes.filter(home => {return home.key === homeKey});
+    navigation.navigate("Article", result);
   };
 
   if (hasPermission === null) {
