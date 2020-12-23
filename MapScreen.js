@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 import MapView, { Marker } from "react-native-maps";
 import dataBase from "./DateBase.json";
 
-const MapScreen = () => {
+const MapScreen = ({navigation}) => {
 
     const markers = dataBase.homes;
 
@@ -18,8 +18,9 @@ const MapScreen = () => {
                     longitudeDelta: 0.02047
                 }}>
 
-                {markers.map((marker) => (<Marker onPress={() => navigation.navigate("Article",marker)} 
-                                                           coordinate={marker.coord} title={marker.name} />) ) }
+                {markers.map((marker) => (<Marker onCalloutPress={() => navigation.navigate("Article",marker)} 
+                                                            coordinate={marker.coord} title={marker.name}
+                                                            description={"Click for more info"}/>) ) }
                 
             </MapView>
 
