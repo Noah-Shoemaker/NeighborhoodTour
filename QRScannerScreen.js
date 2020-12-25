@@ -20,7 +20,12 @@ const QRScannerScreen = ({navigation}) => {
     var url = data.split("/");
     var homeKey = url[4];
     var result = dataBase.homes.filter(home => {return home.key === homeKey});
-    navigation.navigate("Article", result[0]);
+    if (result.length !== 0) {
+      navigation.navigate("Article", result[0]);
+    }
+    else {
+      alert("QR code not recognized. Please try again.");
+    }
   };
 
   if (hasPermission === null) {
