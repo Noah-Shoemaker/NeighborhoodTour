@@ -20,16 +20,15 @@ function MainStackScreen() {
     
     if (auth === false) {
         return (
-            <View style={{flex: 1}}>
-                <Text style={{flex: 1}}>Please enter the password from the booklet to access app.</Text>
+            <View style={{flex: 1, justifyContent: 'center', alignItems:'center'}}>
+                <Text>Please enter the password from the booklet to access app.</Text>
                 <TextInput onSubmitEditing={event => setauth(event.nativeEvent.text === dataBase.authentication.password)}
-                  style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+                  style={{ height: 40, width: 150, borderColor: 'gray', borderWidth: 1}}
                   onChangeText={text => onChangeText(text)}
                   value={value}
                   textContentType='password' 
                   secureTextEntry={true}
                   placeholder="Enter password"
-                  style={{flex: 1}}
                   />
             </View>
         );
