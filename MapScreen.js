@@ -16,11 +16,13 @@ const MapScreen = ({navigation}) => {
                     longitude: -96.702722,
                     latitudeDelta: 0.014109,
                     longitudeDelta: 0.02047
-                }}>
+                }}
+                showsUserLocation="true"
+            >
 
                 {markers.map((marker) => (<Marker onCalloutPress={() => navigation.navigate("Article",marker)} 
-                                           coordinate={marker.coord} title={marker.name}
-                                           description={"Click for more info"} />) ) }
+                                                            coordinate={marker.coord} title={marker.name}
+                                                            description={"Click for more info"}/>) ) }
                 
             </MapView>
 
