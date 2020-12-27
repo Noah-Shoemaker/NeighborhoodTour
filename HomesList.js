@@ -3,12 +3,12 @@ import { Text, View, Button, FlatList } from 'react-native';
 import dataBase from "./DateBase.json";
 
 const HomesList = ({navigation}) => {
-    
+  
     return(
-        <View>
+        <View>s
             <FlatList
                 data = {dataBase.homes}
-                renderItem={({home}) => <Text onPress={() => navigation.navigate("Article",home)}>{home.name}</Text>}
+                renderItem={ ({item}) => (<Text onPress={() => navigation.navigate("Article", item)}> {item.name} </Text>) }
             />
         </View>
     );
