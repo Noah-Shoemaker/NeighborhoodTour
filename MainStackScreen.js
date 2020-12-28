@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Image } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './HomeScreen';
 import QRScannerScreen from './QRScannerScreen';
@@ -9,6 +9,7 @@ import { TextInput } from 'react-native-gesture-handler';
 import dataBase from "./DateBase.json";
 import { useEffect } from 'react';
 import { useRef } from 'react';
+import {StyleSheet} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,10 +33,11 @@ function MainStackScreen() {
     
     if (auth === false) {
         return (
-            <View style={{flex: 1, justifyContent:'center', alignItems:'center', alignContent:'center'}}>
-                <Text>Please enter the password from the booklet to access app.</Text>
+            <View style={styles.container}>
+                <Image source={require('./assets/NSNA_Logo.png')} style={styles.logo}/>
+                <Text style={styles.text}>Please enter the password from the booklet to access app.</Text>
                 <TextInput onSubmitEditing={event => checkPassword(event.nativeEvent.text)}
-                  style={{ height: 40, width: 150, borderColor: 'gray', borderWidth: 1}}
+                  style={styles.textInput}
                   onChangeText={text => onChangeText(text)}
                   value={value}
                   textContentType='password' 
@@ -57,6 +59,32 @@ function MainStackScreen() {
         );
 }
 
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent:'center',
+        alignItems:'center',
+        alignContent:'center'
+    },
+    text: {
+      fontFamily: "Cochin",
+      fontWeight: 'bold',
+      textAlign: 'center',
+      width: 300,
+      fontSize: 15,
+      marginBottom: 10
+    },
+    textInput: {
+        height: 40,
+        width: 150,
+        borderBottomColor: 'gray',
+        borderBottomWidth: 2
+    },
+    logo: {
+        width: 300,
+        height: 300,
+    }
+  });
 
 
 export default MainStackScreen;
