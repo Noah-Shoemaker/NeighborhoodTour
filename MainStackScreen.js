@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import { Text, View, Image } from 'react-native';
+import React, {useState, useEffect, useRef} from 'react';
+import { Text, View, Image, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './HomeScreen';
 import QRScannerScreen from './QRScannerScreen';
@@ -7,9 +7,6 @@ import MapScreen from './MapScreen';
 import ArchiveStack from './ArchiveStack';
 import { TextInput } from 'react-native-gesture-handler';
 import dataBase from "./DateBase.json";
-import { useEffect } from 'react';
-import { useRef } from 'react';
-import {StyleSheet} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
@@ -83,6 +80,7 @@ const styles = StyleSheet.create({
     logo: {
         width: 300,
         height: 300,
+        marginBottom: 40
     }
   });
 
