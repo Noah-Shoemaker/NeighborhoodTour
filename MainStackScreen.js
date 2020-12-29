@@ -59,7 +59,7 @@ function MainStackScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent:'center',
+        marginTop: 40,
         alignItems:'center',
         alignContent:'center'
     },
@@ -78,9 +78,9 @@ const styles = StyleSheet.create({
         borderBottomWidth: 2
     },
     logo: {
-        width: 300,
-        height: 300,
-        marginBottom: 40
+        width: 280,
+        height: 280,
+        marginBottom: 30
     }
   });
 
