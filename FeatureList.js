@@ -1,20 +1,33 @@
 import React from 'react';
-import { Text, View, Button, FlatList } from 'react-native';
+import { Text, View, FlatList, StyleSheet } from 'react-native';
+import dataBase from "./DateBase.json";
 
 const FeatureList = ({navigation}) => {
-    
+  
     return(
-        <View>
+        <View style={styles.container}>
             <FlatList
-                data={[
-                {key: 'Feature1'},
-                {key: 'Feature2'},
-                {key: 'Feature3'},
-                ]}
-                renderItem={({item}) => <Text>{item.key}</Text>}
+                data = {dataBase.features}
+                renderItem={ ({item}) => <Text style={styles.text} onPress={() => navigation.navigate("Article", item)}> {item.name} </Text> }
             />
         </View>
     );
 }
 
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      alignItems:'center',
+      alignContent:'center'
+    },
+    text: {
+      fontFamily: "Cochin",
+      fontSize: 30,
+      fontWeight: "bold",
+      textAlign: 'center',
+      marginTop: 40,
+      textDecorationLine: 'underline'
+    }
+  });
+  
 export default FeatureList;
