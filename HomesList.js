@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Button, FlatList, StyleSheet } from 'react-native';
+import { Text, View, FlatList, StyleSheet } from 'react-native';
 import dataBase from "./DateBase.json";
 
 const HomesList = ({navigation}) => {
@@ -17,16 +17,16 @@ const HomesList = ({navigation}) => {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      marginTop: 40,
       alignItems:'center',
       alignContent:'center'
     },
     text: {
       fontFamily: "Cochin",
+      fontSize: 30,
+      fontWeight: "bold",
       textAlign: 'center',
-      width: 350,
-      fontSize: 20,
-      marginBottom: 10
+      marginTop: 40,
+      textDecorationLine: 'underline'
     }
   });
   
