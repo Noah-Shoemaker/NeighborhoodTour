@@ -46,10 +46,13 @@ function MainStackScreen() {
     }
     
     return (
-        <Tab.Navigator>
+        <Tab.Navigator tabBarOptions={{
+                          labelStyle: styles.tabText,
+                          tabStyle: styles.tabContainer
+                          }}>
             <Tab.Screen name="Home" component={HomeScreen} />
             <Tab.Screen name="Archive" component={ArchiveStack}/>
-            <Tab.Screen name="QRScanner" component={QRScannerScreen} />
+            <Tab.Screen name='QR Scan' component={QRScannerScreen} />
             <Tab.Screen name="Map" component={MapScreen} />
         </Tab.Navigator>
             
@@ -62,6 +65,18 @@ const styles = StyleSheet.create({
         marginTop: 40,
         alignItems:'center',
         alignContent:'center'
+    },
+    tabContainer: {
+        borderWidth: StyleSheet.hairlineWidth,
+        backgroundColor: "#346c24"
+    },
+    tabText: {
+      fontFamily: "Cochin",
+      fontWeight: 'bold',
+      textAlign: 'center',
+      fontSize: 20,
+      paddingBottom: 10,
+      color: 'white'
     },
     text: {
       fontFamily: "Cochin",
