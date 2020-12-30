@@ -7,8 +7,10 @@ import MapScreen from './MapScreen';
 import ArchiveStack from './ArchiveStack';
 import { TextInput } from 'react-native-gesture-handler';
 import dataBase from "./DateBase.json";
+import AsyncStorage from '@react-native-community/async-storage'
 
 const Tab = createBottomTabNavigator();
+const STORAGE_KEY = '@authState';
 
 function MainStackScreen() {
 
@@ -16,7 +18,31 @@ function MainStackScreen() {
     const [value, onChangeText] = useState('');
     const ref = useRef(auth);
 
-    useEffect(() => {dataBase.authentication.authState = auth}, [auth]);
+    useEffect(() => {saveData(auth)}, [auth]);
+
+    useEffect( () => {readData()}, []);
+
+    const saveData = async () => {
+        try {
+          await AsyncStorage.setItem(STORAGE_KEY, auth)
+        } catch (e) {
+          alert('Failed to save the data to the storage')
+        }
+    }
+
+    const readData = async () => {
+        try {
+
+          const authState = await AsyncStorage.getItem(STORAGE_KEY)
+      
+          if (authState !== null) {
+            setauth(authState)
+          }
+
+        } catch (e) {
+          alert('Failed to fetch the data from storage')
+        }
+    }
 
     function checkPassword(e) {
 

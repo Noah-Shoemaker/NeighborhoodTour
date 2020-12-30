@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     text: {
       fontFamily: "Cochin",
       textAlign: 'center',
-      fontSize: 15,
+      fontSize: 18,
       margin: 20
     }
   });
