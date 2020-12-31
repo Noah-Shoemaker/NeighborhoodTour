@@ -18,25 +18,18 @@ function MainStackScreen() {
     const [value, onChangeText] = useState('');
     const ref = useRef(auth);
 
-    useEffect(() => {saveData(auth)}, [auth]);
-
-    useEffect( () => {readData()}, []);
-
-    const saveData = async () => {
-        try {
-          await AsyncStorage.setItem(STORAGE_KEY, auth)
-        } catch (e) {
-          alert('Failed to save the data to the storage')
-        }
-    }
-
     const readData = async () => {
         try {
 
           const authState = await AsyncStorage.getItem(STORAGE_KEY)
       
           if (authState !== null) {
-            setauth(authState)
+              if (authState === "true") {
+                  setauth(true)
+              }
+              else {
+                  setauth(false)
+              }
           }
 
         } catch (e) {
@@ -44,10 +37,26 @@ function MainStackScreen() {
         }
     }
 
+    const saveData = async (auth) => {
+        try {
+            if (auth) {
+                await AsyncStorage.setItem(STORAGE_KEY, "true")
+            }
+            else {
+                await AsyncStorage.setItem(STORAGE_KEY, "false")
+            }
+        } catch (e) {
+          alert('Failed to save the data to the storage')
+        }
+    }
+
+    useEffect( () => {readData()}, []);
+    
     function checkPassword(e) {
 
         setauth(e === dataBase.authentication.password);
         ref.current = (e === dataBase.authentication.password);
+        saveData(e === dataBase.authentication.password);
         
         if (ref.current === false) {
             alert("Wrong password, please try again.");
