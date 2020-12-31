@@ -1,11 +1,12 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import MapView, { Marker } from "react-native-maps";
+import MapView, { Marker, Polyline } from "react-native-maps";
 import dataBase from "./DateBase.json";
 
 const MapScreen = ({navigation}) => {
 
     const markers = dataBase.homes;
+    const coords = markers.map(home => home.coord);
 
     return(
 
@@ -23,6 +24,8 @@ const MapScreen = ({navigation}) => {
                 {markers.map((marker) => (<Marker onCalloutPress={() => navigation.navigate("Article",marker)} 
                                                             coordinate={marker.coord} title={marker.name}
                                                             description={"Click for more info"}/>) ) }
+
+                <Polyline coordinates={coords}/>
                 
             </MapView>
 
