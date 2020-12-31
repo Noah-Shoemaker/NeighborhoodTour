@@ -1,10 +1,10 @@
 import React from 'react';
-import { Text, ScrollView, StyleSheet } from 'react-native';
+import { Text, ScrollView, StyleSheet, View } from 'react-native';
 
 const ArticleScreen = ({navigation,route}) => {
     
     return(
-        <ScrollView contentContainerStyle={styles.container}>
+        <ScrollView style={styles.container}>
             <Text style={styles.bigText}>{route.params.name}</Text>
             <Text style={styles.bigText}>Address: {route.params.address}</Text>
             <Text style={styles.bigText}>Date Built: {route.params.date}</Text>
