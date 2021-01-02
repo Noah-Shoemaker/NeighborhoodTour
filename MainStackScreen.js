@@ -49,7 +49,7 @@ function MainStackScreen() {
           alert('Failed to save the data to the storage')
         }
     }
-
+      
     useEffect( () => {readData()}, []);
     
     function checkPassword(e) {

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Text, View, ScrollView, StyleSheet, Image } from 'react-native';
+import { Text, ScrollView, StyleSheet, Image} from 'react-native';
 
 const HomeScreen = () => {
-    
+
     return(
         <ScrollView style={styles.container} contentContainerStyle={styles.scrollContainer}>
             <Image source={require('./assets/NSNA_Logo.png')} style={styles.logo}/>

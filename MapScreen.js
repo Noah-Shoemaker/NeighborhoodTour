@@ -20,12 +20,10 @@ const MapScreen = ({navigation}) => {
                 }}
                 showsUserLocation="true"
             >
-
+                
                 {markers.map((marker) => (<Marker onCalloutPress={() => navigation.navigate("Article",marker)} 
                                                             coordinate={marker.coord} title={marker.name}
                                                             description={"Click for more info"}/>) ) }
-
-                <Polyline coordinates={coords}/>
                 
             </MapView>
 
@@ -33,3 +31,5 @@ const MapScreen = ({navigation}) => {
 };
 
 export default MapScreen;
+
+// <Polyline coordinates={coords} strokeWidth='5' strokeColor='#346c24'/>
