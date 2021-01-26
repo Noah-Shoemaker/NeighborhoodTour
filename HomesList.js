@@ -8,6 +8,7 @@ const HomesList = ({navigation}) => {
         <View style={styles.container}>
             <FlatList
                 data = {dataBase.homes}
+                //renders items based on house title and directs to article screen when clicked
                 renderItem={ ({item}) => <Text style={styles.text} onPress={() => navigation.navigate("Article", item)}> {item.name} </Text> }
             />
         </View>

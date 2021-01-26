@@ -58,17 +58,19 @@ function MainStackScreen() {
         ref.current = (e === dataBase.authentication.password);
         saveData(e === dataBase.authentication.password);
         
+        //Uses current reference becuase auth doesnt update fast enough
         if (ref.current === false) {
             alert("Wrong password, please try again.");
         }
     }
     
+    //renders password screen when auth is false and home screen is true
     if (auth === false) {
         return (
             <View style={styles.container}>
                 <Image source={require('./assets/NSNA_Logo.png')} style={styles.logo}/>
                 <Text style={styles.text}>Please enter the password from the booklet to access app.</Text>
-                <TextInput onSubmitEditing={event => checkPassword(event.nativeEvent.text)}
+                <TextInput onSubmitEditing={event => checkPassword(event.nativeEvent.text)}  //checks against password when submitted
                   style={styles.textInput}
                   onChangeText={text => onChangeText(text)}
                   value={value}

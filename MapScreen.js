@@ -6,6 +6,7 @@ import dataBase from "./DateBase.json";
 const MapScreen = ({navigation}) => {
 
     const markers = dataBase.homes;
+    //creates list of markers from dataBase entries
     const coords = markers.map(home => home.coord);
 
     return(

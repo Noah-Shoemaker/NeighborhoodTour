@@ -11,7 +11,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <RootStack.Navigator mode="modal">
-        <RootStack.Screen
+        <RootStack.Screen       //Added modal screen for articles
           name="Main"
           component={MainStackScreen}
           options={{ headerShown: false }}
