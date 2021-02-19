@@ -7,7 +7,8 @@ import MapScreen from './MapScreen';
 import ArchiveStack from './ArchiveStack';
 import { TextInput } from 'react-native-gesture-handler';
 import dataBase from "./DateBase.json";
-import AsyncStorage from '@react-native-community/async-storage'
+import AsyncStorage from '@react-native-community/async-storage';
+import PasswordScreen from './PasswordScreen';
 
 const Tab = createBottomTabNavigator();
 const STORAGE_KEY = '@authState';
@@ -67,18 +68,7 @@ function MainStackScreen() {
     //renders password screen when auth is false and home screen is true
     if (auth === false) {
         return (
-            <View style={styles.container}>
-                <Image source={require('./assets/NSNA_Logo.png')} style={styles.logo}/>
-                <Text style={styles.text}>Please enter the password from the booklet to access app.</Text>
-                <TextInput onSubmitEditing={event => checkPassword(event.nativeEvent.text)}  //checks against password when submitted
-                  style={styles.textInput}
-                  onChangeText={text => onChangeText(text)}
-                  value={value}
-                  textContentType='password' 
-                  secureTextEntry={true}
-                  placeholder="Enter password"
-                  />
-            </View>
+            <PasswordScreen checkPassword={checkPassword()}/>
         );
     }
     
