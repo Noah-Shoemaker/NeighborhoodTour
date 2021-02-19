@@ -67,9 +67,9 @@ function MainStackScreen() {
     
     //renders password screen when auth is false and home screen is true
     if (auth === false) {
-        return (
-            <PasswordScreen checkPassword={checkPassword()}/>
-        );
+      return(
+            <PasswordScreen checkPassword={checkPassword} onChangeText={onChangeText} value={value}/>
+      )
     }
     
     return (

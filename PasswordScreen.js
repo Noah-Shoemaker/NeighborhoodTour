@@ -11,8 +11,8 @@ const PasswordScreen = (props) => {
                         <Text style={styles.text}>Please enter the password from the booklet to access app.</Text>
                         <TextInput onSubmitEditing={event => props.checkPassword(event.nativeEvent.text)}  //checks against password when submitted
                         style={styles.textInput}
-                        onChangeText={text => onChangeText(text)}
-                        value={value}
+                        onChangeText={text => props.onChangeText(text)}
+                        value={props.value}
                         textContentType='password' 
                         secureTextEntry={true}
                         placeholder="Enter password"
